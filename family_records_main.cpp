@@ -45,7 +45,7 @@ void add_family_genetic_disease(vector<string>& diseases_record){
 
 class Family{
     public:
-    Family_details family;
+        Family_details family;
         int setFamily_details(){
             cout << "We advice that you provide as accurate information as possible below: " << BLUE << endl;
             cout << "What is the name of the family? ";
