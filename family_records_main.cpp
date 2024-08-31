@@ -48,7 +48,7 @@ void add_family_genetic_disease(vector<string>& diseases_record){
 class Family{
     public:
         Family_details family;
-        int setFamily_details(){
+        void setFamily_details(){
             cout << BLUE << "We advice that you provide as accurate information as possible below: " << RESET << endl;
             cout << "What is the name of the family? ";
             getline(cin, family.family_name);
@@ -66,6 +66,20 @@ class Family{
 
             cout << GREEN << "Thank you. Family data has been successfully added." << RESET << endl;
         }
+
+        void getFamily_details(){
+            cout << BLUE << "Family Name: " << RESET << family.family_name << endl;
+            cout << BLUE << "Family Size: " << RESET << family.family_size << endl;
+            if (!family.family_genetic_diseases.empty()) {
+                cout << BLUE << "Genetic Diseases: " << RESET;
+                for (const auto& disease : family.family_genetic_diseases) {
+                    cout << "'" << disease << "'" << " ";
+                }
+                cout << endl;
+            } else {
+                cout << "No genetic diseases reported." << endl;
+            }
+        }
 };
 
 
@@ -73,7 +87,5 @@ class Family{
 
 int main(void)
 {
-    Family fam1;
-    fam1.setFamily_details();
     return 0;
 }
